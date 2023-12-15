@@ -1,15 +1,26 @@
-// Implement weather modeling
-// using hard code variables
-// Hard-coded variables for the quadratic equation: ax^2 + bx + c = 0
+# Stage 1: Hardcoding Variables
+
+def quadratic_solution(a, b, c):
+    # Formula: ax^2 + bx + c = 0
+    # Quadratic solution: x = (-b ± sqrt(b^2 - 4ac)) / 2a
+   
+    # Calculate the discriminant
+    discriminant = b**2 - 4*a*c
+   
+    # Check if the discriminant is non-negative
+    if discriminant >= 0:
+        # Calculate the solutions
+        x1 = (-b + (discriminant)**0.5) / (2*a)
+        x2 = (-b - (discriminant)**0.5) / (2*a)
+       
+        return x1, x2
+    else:
+        return None
+
+# Example usage with hardcoded coefficients
 a = 1
-b = 5
-c = 6
+b = -3
+c = 2
 
-// Quadratic formula solution
-discriminant = (b*2) - (4 * a * c)
-root1 = (-b - discriminant**0.5) / (2 * a)
-root2 = (-b + discriminant**0.5) / (2 * a)
-
-// Displaying roots
-print("Root 1:", root1)
-print("Root 2:", root2)
+solutions = quadratic_solution(a, b, c)
+print("Solutions:", solutions)
