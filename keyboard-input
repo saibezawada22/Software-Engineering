@@ -1,1 +1,37 @@
+# Stage 2: Keyboard Input
 
+def quadratic_solution(a, b, c):
+    # Formula: ax^2 + bx + c = 0
+    # Quadratic solution: x = (-b ± sqrt(b^2 - 4ac)) / 2a
+   
+    # Calculate the discriminant
+    discriminant = b**2 - 4*a*c
+   
+    # Check if the discriminant is non-negative
+    if discriminant >= 0:
+        # Calculate the solutions
+        x1 = (-b + (discriminant)**0.5) / (2*a)
+        x2 = (-b - (discriminant)**0.5) / (2*a)
+       
+        return x1, x2
+    else:
+        return None
+
+# Example usage with hardcoded coefficients
+a = 1
+b = -3
+c = 2
+
+solutions = quadratic_solution(a, b, c)
+print("Solutions:", solutions)
+
+def get_coefficients_from_user():
+    a = float(input("Enter coefficient a: "))
+    b = float(input("Enter coefficient b: "))
+    c = float(input("Enter coefficient c: "))
+    return a, b, c
+
+# Example usage with keyboard input
+coefficients = get_coefficients_from_user()
+solutions = quadratic_solution(*coefficients)
+print("Solutions:", solutions)
